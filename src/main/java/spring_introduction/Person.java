@@ -1,8 +1,13 @@
 package spring_introduction;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 /**
  * @author Dgryzhkov
  */
+
+@Component("personBean")
 public class Person {
     private Pet pet;
     private String surname;
@@ -28,13 +33,14 @@ public class Person {
         this.age = age;
     }
 
-    /*    public Person(Pet pet) {
+    @Autowired
+        public Person(Pet pet) {
                 System.out.println("Person bean is created");
                 this.pet = pet;
-            }*/
-    public Person() {
+            }
+/*    public Person() {
         System.out.println("Person bean is created");
-    }
+    }*/
 
     public void setPet(Pet pet) {
         System.out.println("Class Person: set pet");
