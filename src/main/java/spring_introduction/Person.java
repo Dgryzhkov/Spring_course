@@ -9,14 +9,14 @@ import org.springframework.stereotype.Component;
  * @author Dgryzhkov
  */
 
-@Component("personBean")
+//@Component("personBean")
 public class Person {
-//    @Autowired
+    //    @Autowired
 //    @Qualifier("catBean")
     private Pet pet;
-   // @Value("${person.surname}")
+    // @Value("${person.surname}")
     private String surname;
-   // @Value("${person.age}")
+    // @Value("${person.age}")
     private int age;
 
     public String getSurname() {
@@ -39,15 +39,21 @@ public class Person {
         this.age = age;
     }
 
-        @Autowired
-            public Person(@Qualifier ("dog") Pet pet) {
-                    System.out.println("Person bean is created");
-                    this.pet = pet;
-                }
+    public Person(Pet pet) {
+        System.out.println("Person bean is created");
+        this.pet = pet;
+    }
+//    @Autowired
+//    public Person(@Qualifier("dog") Pet pet) {
+//        System.out.println("Person bean is created");
+//        this.pet = pet;
+//    }
+
     public Person() {
         System.out.println("Person bean is created");
     }
-//    @Autowired
+
+    //    @Autowired
 //    @Qualifier("dog")
     public void setPet(Pet pet) {
         System.out.println("Class Person: set pet");
