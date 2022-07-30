@@ -1,6 +1,7 @@
 package spring_introduction;
-
 import org.springframework.stereotype.Component;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 /**
  * @author Dgryzhkov
@@ -26,9 +27,11 @@ public class Dog implements Pet {
         System.out.println("Bow-Wow");
     }
 
+    @PostConstruct
     public void init(){
         System.out.println("Class dog: init method");
     }
+    @PreDestroy
     public void destroy(){
         System.out.println("Class dog: destroy method");
     }
