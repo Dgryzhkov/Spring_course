@@ -6,7 +6,7 @@ import javax.annotation.PreDestroy;
 /**
  * @author Dgryzhkov
  */
-@Component
+//@Component
 public class Dog implements Pet {
     //private String name;
 
