@@ -1,5 +1,6 @@
 package aop;
 
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -12,8 +13,9 @@ public class Test1 {
         Book book = context.getBean("book", Book.class);
         UniLibrary uniLibrary = context.getBean("uniLibrary", UniLibrary.class);
         uniLibrary.getBook();
-        uniLibrary.returnMagazine();
-        uniLibrary.addBook();
+        uniLibrary.getMagazine();
+//        uniLibrary.returnMagazine();
+//        uniLibrary.addBook();
 
 //        SchoolLibrary schoolLibrary = context.getBean("schoolLibrary", SchoolLibrary.class);
 //
