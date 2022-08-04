@@ -12,18 +12,24 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class NewLoggingAspect {
     @Around("execution( public String returnBook())")
-    public  String aroundReturnBookLoggingAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+    public String aroundReturnBookLoggingAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         System.out.println("aroundReturnBookLoggingAdvice: в библиотеку " +
                 "пытаются вернуть книгу");
+
         System.out.println("aroundReturnBookLoggingAdvice: в библиотеку " +
                 "возвращают книгу");
-        long begin = System.currentTimeMillis();
-        Object targetMethodResult = proceedingJoinPoint.proceed();
-//        targetMethodResult = "Преступление и наказание";
-        long end = System.currentTimeMillis();
+        Object targetMethodResult = null;
+        try {
+            targetMethodResult = proceedingJoinPoint.proceed();
+        } catch (Exception e) {
+            System.out.println("aroundReturnBookLoggingAdvice: было поймано исключение " + e);
+//            targetMethodResult = "Незвестное название книги";
+            throw e;
+        }
+
         System.out.println("aroundReturnBookLoggingAdvice: в библиотеку " +
                 "успешно вернули книгу");
-        System.out.println("aroundReturnBookLoggingAdvice:  метод returnBook выполнил работы за " + (end-begin) + " миллисекунд");
+
         return (String) targetMethodResult;
     }
 }
