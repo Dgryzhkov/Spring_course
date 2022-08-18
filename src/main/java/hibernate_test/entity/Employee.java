@@ -21,7 +21,7 @@ public class Employee {
     @Column(name="salary")
     private int salary;
 
-    public Employee(int id) {
+    public Employee() {
     }
 
     public Employee(String name, String surname, String department, int salary) {
