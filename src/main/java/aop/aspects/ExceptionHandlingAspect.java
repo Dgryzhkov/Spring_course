@@ -1,21 +1,21 @@
-package aop.aspects;
-
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
-
-/**
- * @author Dgryzhkov
- */
-@Component
-@Aspect
-@Order(3)
-public class ExceptionHandlingAspect {
-    @Before("aop.aspects.MyPointcuts.allAddMethods ()")
-    public void beforeAddExceptionHandlingAdvice(){
-        System.out.println("beforeAddExceptionHandlingAdvice: ловим/обрабатываем " +
-                "иключения при попытке получить книгу/журнал");
-        System.out.println("-------------------------------------");
-    }
-}
+//package aop.aspects;
+//
+//import org.aspectj.lang.annotation.Aspect;
+//import org.aspectj.lang.annotation.Before;
+//import org.springframework.core.annotation.Order;
+//import org.springframework.stereotype.Component;
+//
+///**
+// * @author Dgryzhkov
+// */
+//@Component
+//@Aspect
+//@Order(3)
+//public class ExceptionHandlingAspect {
+//    @Before("aop.aspects.MyPointcuts.allAddMethods ()")
+//    public void beforeAddExceptionHandlingAdvice(){
+//        System.out.println("beforeAddExceptionHandlingAdvice: ловим/обрабатываем " +
+//                "иключения при попытке получить книгу/журнал");
+//        System.out.println("-------------------------------------");
+//    }
+//}
