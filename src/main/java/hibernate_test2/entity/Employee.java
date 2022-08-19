@@ -1,4 +1,4 @@
-package hibernate_test.entity;
+package hibernate_test2.entity;
 
 import javax.persistence.*;
 
@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name = "employees")
 public class Employee {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
     @Column(name = "name")
@@ -16,6 +17,10 @@ public class Employee {
     private  String department;
     @Column(name = "salary")
     private int salary;
+
+    @OneToOne(cascade = CascadeType.ALL )
+    @JoinColumn(name = "details_id")
+    private Detail empDetail;
 
     public Employee(){
 
