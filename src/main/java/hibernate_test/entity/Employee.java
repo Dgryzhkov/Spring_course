@@ -1,5 +1,6 @@
 package hibernate_test.entity;
 
+<<<<<<< HEAD
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -21,6 +22,28 @@ public class Employee {
     private int salary;
 
     public Employee(){
+=======
+import javax.persistence.*;
+
+@Entity
+@Table(name ="employees")
+public class Employee {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
+    private int id;
+    @Column(name="name")
+    private String name;
+    @Column(name="surname")
+    private String surname;
+    @Column(name="department")
+    private String department;
+    @Column(name="salary")
+    private int salary;
+
+    public Employee() {
+>>>>>>> ce81505e120db71b2e090c4a8a983b3f272580a8
     }
 
     public Employee(String name, String surname, String department, int salary) {
@@ -30,6 +53,20 @@ public class Employee {
         this.salary = salary;
     }
 
+<<<<<<< HEAD
+=======
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", department='" + department + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
+
+>>>>>>> ce81505e120db71b2e090c4a8a983b3f272580a8
     public int getId() {
         return id;
     }
